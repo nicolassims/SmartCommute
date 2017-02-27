@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/backpacker777/PWA-SmartCommute"
+    "url": "https://github.com/nicolassims/SmartCommute"
   },
   "engines": {
     "node": ">= 7.3.0"

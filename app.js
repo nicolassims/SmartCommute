@@ -4,7 +4,7 @@
 
 const DATA_HANDLER = require('./node/DataHandler');
 
-class app3 {
+class app {
     constructor() {
         this.DataHandler = new DATA_HANDLER();
         this.ejsData = null;
