@@ -20,6 +20,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "fs": "latest",
     "ejs": "latest",
     "nedb": "latest",
     "formidable": "latest"
