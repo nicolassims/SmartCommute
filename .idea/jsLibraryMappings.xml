@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$" libraries="{SmartCommute/node_modules}" />
     <file url="PROJECT" libraries="{SmartCommute/node_modules, service_worker_api-DefinitelyTyped}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
+    <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>
