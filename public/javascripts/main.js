@@ -6,7 +6,6 @@
 
 class main {
     constructor() {
-        console.log('Called');
         //main.prepApp();
         //new EventHandler();
         this.user = [];
