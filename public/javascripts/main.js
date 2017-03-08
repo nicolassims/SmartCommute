@@ -11,10 +11,10 @@ class main {
         this.user = [];
     }
 
-    static prepApp() {
+/*    static prepApp() {
         document.getElementById('log').style.display = 'none';
         document.getElementById('create').style.display = 'none';
-    }
+    }*/
 }
 
 class EventHandler {
@@ -24,12 +24,12 @@ class EventHandler {
         this.handleCreate();
     }
 
-    handleFB() {
+/*    handleFB() {
         document.getElementById('fb').addEventListener('click', () => {
             document.getElementById('login').style.display = 'none';
             document.getElementById('log').style.display = 'block';
         });
-    }
+    }*/
 
     handleContinue() {
         document.getElementById('continue').addEventListener('click', () => {
