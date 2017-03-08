@@ -2,7 +2,7 @@
   "name": "SmartCommute",
   "version": "2.4.7",
   "private": false,
-  "description": "For logging your Smart Commute miles",
+  "description": "For logging Smart Commute Units",
   "main": "bin/server",
   "keywords": [
     "spa",
@@ -16,13 +16,14 @@
     "url": "https://github.com/nicolassims/SmartCommute"
   },
   "engines": {
-    "node": ">= 7.3.0"
+    "node": ">= 7.6.0"
   },
   "license": "MIT",
   "dependencies": {
     "fs": "latest",
     "ejs": "latest",
     "nedb": "latest",
-    "formidable": "latest"
+    "formidable": "latest",
+    "simple-oauth2": "latest"
   }
 }

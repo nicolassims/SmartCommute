@@ -1,11 +1,10 @@
-//  todo:
-
 "use strict";
 
 const DATA_HANDLER = require('./node/DataHandler');
 
 class app {
     constructor() {
+        this.dataHandler = new DATA_HANDLER();
         this.ejsData = null;
         this.loadServer();
     }
@@ -16,6 +15,7 @@ class app {
             EJS = require('ejs');
 
         HTTP.createServer((request, response) => {
+            console.log(request);
 
             // -- DOM RESPONDER -- //
 
@@ -40,11 +40,13 @@ class app {
 
             // -- ROUTES -- //
 
-            if (request.method == 'POST') {
+            if (request.method === 'POST') {
                 if (request.headers['x-requested-with'] === 'XMLHttpRequest0') {
                     this.loadData(request, response, 0);
                 } else if (request.headers['x-requested-with'] === 'XMLHttpRequest1') {
                     this.loadData(request, response, 1);
+                } else if (request.headers['x-requested-with'] === 'XMLHttpRequest2') {
+                    this.loadData(request, response, 2);
                 } else {
                     console.log("[405] " + request.method + " to " + request.url);
                     response.writeHead(405, "Method not supported", { 'Content-Type': 'text/html' });
@@ -68,59 +70,49 @@ class app {
 
     render(path, contentType, callback, encoding) {
         const FS = require('fs');
-        FS.readFile(path, encoding ? encoding : 'utf-8', (error, string) => { // ternary
+        FS.readFile(path, encoding ? encoding : 'utf-8', (error, string) => {
             callback(error, string, contentType);
         });
     }
 
     loadData(req, res, whichAjax) {
         if (whichAjax === 0) {
-            let user = {};
             req.on('data', (data) => {
-                let found = false;
-                let users = DATA_HANDLER.loadUserData('data/users.csv');
-                const COLUMNS = 4;
-                let tempArray, finalData = [];
-                tempArray = users.split(/\r?\n/); //remove newlines
-                for (let i = 0; i < tempArray.length; i++) {
-                    finalData[i] = tempArray[i].split(/,/).slice(0, COLUMNS);
-                }
-                for (let i = 0; i < finalData.length; i++) {
-                    if (data == finalData[i][0]) {
-                        found = true;
-                        DATA_HANDLER.findRecords(finalData[i][0], (data2) => {
-                            if (data2 !== false) {
-                                user = data2;
-                            } else {
-                                user = {
-                                    'email': finalData[i][0],
-                                    'lastName': finalData[i][1],
-                                    'firstName': finalData[i][2]
-                                };
-                            }
-                            user = JSON.stringify(user);
-                            res.writeHead(200, {'content-type': 'application/json'});
-                            res.end(user);
-                        });
-                        break;
-                    }
-                }
-                if (found === false) {
+                let cleanData = data.toString('utf8');
+                let user = DATA_HANDLER.handleUserData(cleanData, whichAjax);
+                if (user !== 'false') {
+                    res.writeHead(200, {'content-type': 'application/json'});
+                    res.end(user);
+                } else {
                     res.writeHead(200, {'content-type': 'text/plain'});
                     res.end('false');
                 }
             });
         } else if (whichAjax === 1) {
-            const FORMIDABLE = require('formidable');  // https://docs.nodejitsu.com/articles/HTTP/servers/how-to-handle-multipart-form-data
+            const FORMIDABLE = require('formidable');
             let formData = {};
             new FORMIDABLE.IncomingForm().parse(req).on('field', (field, name) => {
                 formData[field] = name;
             }).on('error', (err) => {
                 next(err);
             }).on('end', () => {
-                DATA_HANDLER.queryData(formData);
                 formData = JSON.stringify(formData);
+                DATA_HANDLER.handleUserData(formData, whichAjax);
                 res.writeHead(200, {'content-type': 'application/json'});
+                res.end(formData);
+            });
+        } else if (whichAjax === 2) {
+            const FORMIDABLE = require('formidable');
+            let formData = {};
+            new FORMIDABLE.IncomingForm().parse(req).on('field', (field, name) => {
+                formData[field] = name;
+            }).on('error', (err) => {
+                next(err);
+            }).on('end', () => {
+                // DATA_HANDLER.queryData(formData);
+                this.dataHandler.addData(formData);
+                res.writeHead(200, {'content-type': 'application/json'});
+                formData = JSON.stringify(formData);
                 res.end(formData);
             });
         }
