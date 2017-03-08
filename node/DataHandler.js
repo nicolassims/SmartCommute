@@ -6,6 +6,7 @@ const FS = require ('fs'),
 
 class DataHandler {
     constructor() {
+        console.log('Called');
         this.data = [];
     }
 

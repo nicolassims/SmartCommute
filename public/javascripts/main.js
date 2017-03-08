@@ -6,6 +6,7 @@
 
 class main {
     constructor() {
+        console.log('Called');
         //main.prepApp();
         new EventHandler();
         this.user = [];
@@ -14,11 +15,11 @@ class main {
 /*    static prepApp() {
         document.getElementById('log').style.display = 'none';
         document.getElementById('create').style.display = 'none';
-    }*/
+
 }
 
 class EventHandler {
-/*    constructor() {
+    constructor() {
         this.handleFB();
         this.handleContinue();
         this.handleCreate();

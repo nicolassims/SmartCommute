@@ -1,5 +1,5 @@
 (load => {
-    console.log('Servercalled');
+    console.log('Called');
     const APP = require('../app.js');
     new APP();
 })();
