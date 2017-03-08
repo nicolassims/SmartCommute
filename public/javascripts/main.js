@@ -6,7 +6,7 @@
 
 class main {
     constructor() {
-        main.prepApp();
+        //main.prepApp();
         new EventHandler();
         this.user = [];
     }
@@ -18,18 +18,17 @@ class main {
 }
 
 class EventHandler {
-    constructor() {
+/*    constructor() {
         this.handleFB();
         this.handleContinue();
         this.handleCreate();
     }
-
-/*    handleFB() {
+        handleFB() {
         document.getElementById('fb').addEventListener('click', () => {
             document.getElementById('login').style.display = 'none';
             document.getElementById('log').style.display = 'block';
         });
-    }*/
+    }
 
     handleContinue() {
         document.getElementById('continue').addEventListener('click', () => {
@@ -60,7 +59,7 @@ class EventHandler {
             document.getElementById('login').style.display = 'none';
             document.getElementById('create').style.display = 'block';
         });
-    }
+    }*/
 
     static alertId() {
         alert('You must provide your proper email address to continue.');
