@@ -16,13 +16,14 @@
     "url": "https://github.com/nicolassims/SmartCommute"
   },
   "engines": {
-    "node": ">= 7.3.0"
+    "node": ">= 7.6.0"
   },
   "license": "MIT",
   "dependencies": {
     "fs": "latest",
     "ejs": "latest",
     "nedb": "latest",
-    "formidable": "latest"
+    "formidable": "latest",
+    "simple-oauth2": "latest"
   }
 }
