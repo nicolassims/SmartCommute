@@ -2,7 +2,7 @@
   "name": "SmartCommute",
   "version": "2.4.7",
   "private": false,
-  "description": "For logging Smart Commute Units",
+  "description": "For logging your Smart Commute miles",
   "main": "bin/server",
   "keywords": [
     "spa",

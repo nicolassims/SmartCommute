@@ -1,4 +1,11 @@
 @import url(normalize.css);
 @import url(skeleton.css);
+#header {
+  padding-top: 10%; }
+  #header h1 {
+    font-size: 4vh; }
+  #header h2 {
+    padding: 2% 0% 0% 25%;
+    font-size: 3.75vh; }
 
 /*# sourceMappingURL=overrides.css.map */
