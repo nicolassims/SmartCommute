@@ -6,6 +6,7 @@ const DATA_HANDLER = require('./node/DataHandler');
 
 class app {
     constructor() {
+        console.log('Appcalled');
         this.ejsData = null;
         this.loadServer();
     }

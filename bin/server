@@ -1,4 +1,5 @@
 (load => {
+    console.log('Servercalled');
     const APP = require('../app.js');
     new APP();
 })();
