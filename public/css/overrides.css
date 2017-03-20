@@ -8,6 +8,8 @@
     padding: 12% 0% 0% 10%; }
 
 /* NICOLAS' STUFF. DO NOT TOUCH. */
+/*multiple pages*/
+/*logger.ejs page*/
 #bigDiv {
   width: 80%;
   margin: 10% 0 0 10%;
@@ -18,8 +20,7 @@
   margin: 10% 0 10% 10%;
   width: 80%;
   height: 20%;
-  resize: vertical;
-  max-height: 60%; }
+  resize: vertical; }
 
 .leftColumns {
   margin: 6% 0 0 5%;
@@ -33,5 +34,13 @@
   float: right;
   margin: -14% 5% 0 0;
   width: 40%; }
+
+/*leaderboard.ejs page*/
+#leaderBoard {
+  width: 80%;
+  margin-left: 10%; }
+
+#totals {
+  font-weight: bold; }
 
 /*# sourceMappingURL=overrides.css.map */
