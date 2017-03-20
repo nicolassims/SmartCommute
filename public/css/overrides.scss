@@ -2,9 +2,14 @@
 @import 'skeleton.css';
 
 #header {
-  padding-top: 5%;
+  padding: 5% 0% 0% 0%;
+  .right {
+    padding: 12% 0% 0% 5%;
+  }
+  .left {
+    padding: 12% 0% 0% 10%;
+  }
 }
-
 
 /* NICOLAS' STUFF. DO NOT TOUCH. */
 #bigDiv {

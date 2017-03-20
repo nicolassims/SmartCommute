@@ -1,7 +1,11 @@
 @import url(normalize.css);
 @import url(skeleton.css);
 #header {
-  padding-top: 5%; }
+  padding: 5% 0% 0% 0%; }
+  #header .right {
+    padding: 12% 0% 0% 5%; }
+  #header .left {
+    padding: 12% 0% 0% 10%; }
 
 /* NICOLAS' STUFF. DO NOT TOUCH. */
 #bigDiv {
