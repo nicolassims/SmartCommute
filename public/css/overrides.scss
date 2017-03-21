@@ -15,20 +15,6 @@
 /*multiple pages*/
 
 /*logger.ejs page*/
-#bigDiv {
-  width: 80%;
-  margin: 10% 0 0 10%;
-  height: 30%;
-  border: 1px solid #000;
-}
-
-#tripDescrip {
-  margin: 10% 0 10% 10%;
-  width: 80%;
-  height: 20%;
-  resize: vertical;
-}
-
 .leftColumns {
   margin: 6% 0 0 5%;
   height: 20%;
@@ -44,7 +30,42 @@
   width: 40%;
 }
 
+#bigDiv {
+  width: 80%;
+  margin: 10% 0 0 10%;
+  height: 30%;
+  border: 1px solid #000;
+}
+
+#tripDescrip {
+  margin: 10% 0 10% 10%;
+  width: 80%;
+  height: 20%;
+  resize: vertical;
+}
+
 /*leaderboard.ejs page*/
+.trips {
+  border-right: 1px solid #E1E1E1;
+}
+
+.centered {
+  text-align: center;
+}
+
+.username {
+  padding-left: 5%;
+  border-right: 1px solid #E1E1E1;
+}
+
+#lightGrey {
+  background-color: #D9D9D9;
+}
+
+#darkGrey {
+  background-color: #999999;
+}
+
 #leaderBoard {
   width: 80%;
   margin-left: 10%;
