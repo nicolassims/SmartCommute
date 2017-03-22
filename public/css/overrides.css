@@ -36,15 +36,12 @@
   resize: vertical; }
 
 /*leaderboard.ejs page*/
-.trips {
-  border-right: 1px solid #E1E1E1; }
 
 .centered {
   text-align: center; }
 
-.username {
-  padding-left: 5%;
-  border-right: 1px solid #E1E1E1; }
+#username1, #username2, #username3, #username4, #username5, #username6, #username7, #username8, #username9, #username10, #totals, #username {
+  padding-left: 5%; }
 
 #lightGrey {
   background-color: #D9D9D9; }
