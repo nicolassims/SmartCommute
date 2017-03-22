@@ -1,11 +1,13 @@
 @import url(normalize.css);
 @import url(skeleton.css);
 #header {
-  padding: 5% 0% 0% 0%; }
+  margin: 5% 0% 0% 30%; }
   #header .right {
     padding: 12% 0% 0% 5%; }
   #header .left {
-    padding: 12% 0% 0% 10%; }
+    padding: 12% 0% 0% 8%; }
+  #header #emmet {
+    margin: 2% 0% 0% 11%; }
 
 /* NICOLAS' STUFF. DO NOT TOUCH. */
 /*multiple pages*/

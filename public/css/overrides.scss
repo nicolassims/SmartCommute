@@ -2,12 +2,15 @@
 @import 'skeleton.css';
 
 #header {
-  padding: 5% 0% 0% 0%;
+  margin: 5% 0% 0% 30%;
   .right {
     padding: 12% 0% 0% 5%;
   }
   .left {
-    padding: 12% 0% 0% 10%;
+    padding: 12% 0% 0% 8%;
+  }
+  #emmet{
+    margin: 2% 0% 0% 11%;
   }
 }
 
