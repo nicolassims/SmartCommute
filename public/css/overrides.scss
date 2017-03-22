@@ -2,30 +2,27 @@
 @import 'skeleton.css';
 
 #header {
-  padding-top: 5%;
+  margin: 5% 0% 0% 30%;
+  .right {
+    padding: 12% 0% 0% 5%;
+  }
+  .left {
+    padding: 12% 0% 0% 8%;
+  }
+  #emmet{
+    margin: 2% 0% 0% 11%;
+  }
 }
-
 
 /* NICOLAS' STUFF. DO NOT TOUCH. */
-#bigDiv {
-  width: 80%;
-  margin: 30% 0 0 10%;
-  height: 30%;
-  border: 1px solid #000;
-}
+/*multiple pages*/
 
-#tripDescrip {
-  margin: 15% 0 0 10%;
-  width: 80%;
-  height: 40%;
-  background-color: #D9D9D9;
-}
-
+/*logger.ejs page*/
 .leftColumns {
   margin: 6% 0 0 5%;
   height: 20%;
   width: 25%;
-  background-color: #D9D9D9;
+  border: 1px solid #D9D9D9;
   font-weight: bold;
   text-align: center;
 }
@@ -35,6 +32,7 @@
   margin: -14% 5% 0 0;
   width: 40%;
 }
+<<<<<<< HEAD
 /* Footer stuff haha */
 .footer {
   font-family: "Times New Roman";
@@ -42,4 +40,49 @@
   background-color: #33C3F0;
   text-align: right;
   border-width: 4px;
+=======
+
+#bigDiv {
+  width: 80%;
+  margin: 10% 0 0 10%;
+  height: 30%;
+  border: 1px solid #000;
+}
+
+#tripDescrip {
+  margin: 10% 0 10% 10%;
+  width: 80%;
+  height: 20%;
+  resize: vertical;
+}
+
+/*leaderboard.ejs page*/
+.trips {
+  border-right: 1px solid #E1E1E1;
+}
+
+.centered {
+  text-align: center;
+}
+
+#username1, #username2, #username3, #username4, #username5, #username6, #username7, #username8, #username9, #username10, #totals, #username {
+  padding-left: 5%;
+}
+
+#lightGrey {
+  background-color: #D9D9D9;
+}
+
+#darkGrey {
+  background-color: #999999;
+}
+
+#leaderBoard {
+  width: 80%;
+  margin-left: 10%;
+}
+
+#totals {
+  font-weight: bold;
+>>>>>>> ce8319f8596502a78f0bbb80ddfce9435d299f03
 }
