@@ -1,28 +1,20 @@
 /*
-Error: Invalid CSS after "...dfce9435d299f03": expected "{", was "}"
-        on line 88 of C:\webdev\SmartCommute\public\css\overrides.scss
+Error: Invalid CSS after "}": expected "}", was ""
+        on line 87 of C:\Web Dev\SmartCommute\public\css\overrides.scss
 
+82:   margin-left: 10%;
 83: }
 84: 
 85: #totals {
 86:   font-weight: bold;
-87: >>>>>>> ce8319f8596502a78f0bbb80ddfce9435d299f03
-88: }
+87: }
 
 Backtrace:
-C:\webdev\SmartCommute\public\css\overrides.scss:88
+C:\Web Dev\SmartCommute\public\css\overrides.scss:87
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:643:in `block'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
@@ -42,4 +34,4 @@ C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...dfce9435d299f03\": expected \"{\", was \"}\"\A         on line 88 of C:\webdev\SmartCommute\public\css\overrides.scss\A \A 83: }\A 84: \A 85: #totals {\A 86:   font-weight: bold;\A 87: >>>>>>> ce8319f8596502a78f0bbb80ddfce9435d299f03\A 88: }"; }
+  content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 87 of C:\Web Dev\SmartCommute\public\css\overrides.scss\A \A 82:   margin-left: 10%;\A 83: }\A 84: \A 85: #totals {\A 86:   font-weight: bold;\A 87: }"; }
