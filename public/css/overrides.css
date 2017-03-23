@@ -1,37 +1,71 @@
-/*
-Error: Invalid CSS after "}": expected "}", was ""
-        on line 87 of C:\Web Dev\SmartCommute\public\css\overrides.scss
+@import url(normalize.css);
+@import url(skeleton.css);
+#header {
+  margin: 5% 0% 0% 30%; }
+  #header .right {
+    padding: 12% 0% 0% 5%; }
+  #header .left {
+    padding: 12% 0% 0% 8%; }
+  #header #emmet {
+    margin: 2% 0% 0% 11%; }
 
-82:   margin-left: 10%;
-83: }
-84: 
-85: #totals {
-86:   font-weight: bold;
-87: }
+/* NICOLAS' STUFF. DO NOT TOUCH. */
+/*multiple pages*/
+/*logger.ejs page*/
+.leftColumns {
+  margin: 6% 0 0 5%;
+  height: 20%;
+  width: 25%;
+  border: 1px solid #D9D9D9;
+  font-weight: bold;
+  text-align: center; }
 
-Backtrace:
-C:\Web Dev\SmartCommute\public\css\overrides.scss:87
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:643:in `block'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
-C:/Program Files (x86)/Koala/bin/sass:18:in `load'
-C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 87 of C:\Web Dev\SmartCommute\public\css\overrides.scss\A \A 82:   margin-left: 10%;\A 83: }\A 84: \A 85: #totals {\A 86:   font-weight: bold;\A 87: }"; }
+.rightColumns {
+  float: right;
+  margin: -14% 5% 0 0;
+  width: 40%; }
+
+/* Footer stuff haha */
+.footer {
+  font-family: "Times New Roman";
+  font-size: 12px;
+  background-color: #33C3F0;
+  text-align: right;
+  border-width: 4px; }
+
+#bigDiv {
+  width: 80%;
+  margin: 10% 0 0 10%;
+  height: 30%;
+  border: 1px solid #000; }
+
+#tripDescrip {
+  margin: 10% 0 10% 10%;
+  width: 80%;
+  height: 20%;
+  resize: vertical; }
+
+/*leaderboard.ejs page*/
+.trips {
+  border-right: 1px solid #E1E1E1; }
+
+.centered {
+  text-align: center; }
+
+#username1, #username2, #username3, #username4, #username5, #username6, #username7, #username8, #username9, #username10, #totals, #username {
+  padding-left: 5%; }
+
+#lightGrey {
+  background-color: #D9D9D9; }
+
+#darkGrey {
+  background-color: #999999; }
+
+#leaderBoard {
+  width: 80%;
+  margin-left: 10%; }
+
+#totals {
+  font-weight: bold; }
+
+/*# sourceMappingURL=overrides.css.map */
