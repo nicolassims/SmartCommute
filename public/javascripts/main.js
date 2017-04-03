@@ -39,7 +39,7 @@ class main {
         console.log('words1');
         let bustCache = '?' + new Date().getTime();
         const XHR = new XMLHttpRequest();
-        XHR.open('POST', document.url  + bustCache, true);
+        XHR.open('POST', document.url + bustCache, true);
         XHR.setRequestHeader('X-Requested-with', requestNum);
         XHR.send(sendToNode);
         XHR.onload = () => {
