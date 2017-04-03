@@ -1,11 +1,14 @@
 "use strict";
-const DATA_HANDLER = require('./node/DataHandler.js');
+
+const DATA_HANDLER = require('./node/DataHandler.js'), IO = require(`fs`);
+
 class app {
     constructor() {
         this.ejsData = null;
         this.user = null;
         this.loadServer();
     }
+
     loadServer() {
         const HTTP = require('http');
         const PORT = 8000;
@@ -31,11 +34,13 @@ class app {
             };
             if (request.method === 'POST') {
                 if (request.headers['x-requested-with'] === 'XMLHttpRequest0') {
+                    console.log('words2');
                     request.on('data', (data) => {
                         this.user = DATA_HANDLER.handleUserData(data.toString('utf8'));
-                        if (this.user !== 'false') {
+                        console.log('words4');
+                        if (this.user == true) {
                             response.writeHead(200, {'content-type': 'application/json'});
-                            response.end(this.user);
+                            response.end('true');
                         } else {
                             response.writeHead(200, {'content-type': 'text/plain'});
                             response.end('false');
@@ -58,6 +63,7 @@ class app {
             }
         }).listen(PORT);
     }
+
     render(path, contentType, callback, encoding) {
         const FS = require('fs');
         FS.readFile(path, encoding ? encoding : 'utf-8', (error, string) => {

@@ -1,16 +1,26 @@
 <% include public/views/header.ejs %>
 
-<form id="loginForm" name="login" action="index_submit" method="get" accept-charset="utf-8">
-    <div class="row loginPage">
-        <label>Email</label>
-        <input id="email" type="email" name="usermail" placeholder="yourname@email.com" required>
-        <br>
-        <label>Password</label>
-        <input id="password" type="password" name="password" placeholder="password" required>
-        <br>
-        <br>
-        <input id="loginSubmit" type="submit" value="Login">
-    </div>
-</form>
+<div id="loginPage">
+    <form id="loginForm" name="login" action="index_submit" method="get" accept-charset="utf-8">
+        <div class="row loginPage">
+            <label>Email</label>
+            <input id="email" type="email" name="usermail" placeholder="yourname@email.com" required>
+            <br>
+            <label>Password</label>
+            <input id="password" type="password" name="password" placeholder="password" required>
+            <br>
+            <br>
+            <input id="loginSubmit" type="submit" value="Login">
+        </div>
+    </form>
+</div>
+
+<div id="loggerPage">
+    <% include public/views/logger.ejs %>
+</div>
+
+<div id="leaderboardPage">
+    <% include public/views/logger.ejs %>
+</div>
 
 <% include public/views/footer.ejs %>

@@ -1,33 +1,29 @@
 "use strict";
 
-const FS = require('fs');
+const IO = require('fs');
 
 class DataHandler {
     static handleUserData(data) {
+        let isTrue = 0;
+        console.log('words3');
         data = JSON.parse(data);
-        const FILE_PATH = 'data/users.csv';
-        let users = FS.readFileSync(FILE_PATH, 'utf8');
-        let user = {};
-        const COLUMNS = 4;
-        let tempArray, finalData = [];
-        tempArray = users.split(/\r?\n/);
+        data = data.toString().split(/,/);
+        let users = [];
+        let fileReader = IO.readFileSync(`data/users.csv`, `utf8`);
+        let tempArray = fileReader.toString().split(/\r?\n/);
         for (let i = 0; i < tempArray.length; i++) {
-            finalData[i] = tempArray[i].split(/,/).slice(0, COLUMNS);
+            users.push(tempArray[i].toString().split(/,/));
         }
-        for (let i = 0; i < finalData.length; i++) {
-            if (data === finalData[i][0]) {
-                user = JSON.stringify({
-                    'email': finalData[i][0],
-                    'position': finalData[i][1],
-                    'lastName': finalData[i][2],
-                    'firstName': finalData[i][3]
-                });
-                break;
-            } else {
-                user = 'false';
+        console.log(users);
+        console.log(data);
+        for (let i = 0; i < users.length; i++) {
+            if (users[i][0] == data[0] && users[i][1] == data[1]) {
+                isTrue = 1;
             }
         }
-        return user;
+        if (isTrue == 1) {
+            return true;
+        }
     }
 }
 
