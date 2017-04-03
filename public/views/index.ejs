@@ -1,19 +1,15 @@
 <% include public/views/header.ejs %>
 
-<form name="login" action="index_submit" method="get" accept-charset="utf-8">
-    <div class="row">
-        <div class="one-third column">&nbsp;</div>
-        <div class="one-third column" id="loginScreen">
-            <label>Email</label>
-            <input type="email" name="usermail" placeholder="yourname@email.com" required>
-            <br>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="password" required>
-            <br>
-            <br>
-            <input type="submit" value="Login">
-        </div>
-        <div class="one-third column">&nbsp;</div>
+<form id="loginForm" name="login" action="index_submit" method="get" accept-charset="utf-8">
+    <div class="row loginPage">
+        <label>Email</label>
+        <input id="email" type="email" name="usermail" placeholder="yourname@email.com" required>
+        <br>
+        <label>Password</label>
+        <input id="password" type="password" name="password" placeholder="password" required>
+        <br>
+        <br>
+        <input id="loginSubmit" type="submit" value="Login">
     </div>
 </form>
 

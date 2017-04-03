@@ -83,4 +83,18 @@
 #totals {
   font-weight: bold; }
 
+/*login.ejs page*/
+#email, #password {
+  height: 200%; }
+
+#loginForm {
+  font-size: 300%;
+  font-weight: normal; }
+
+#loginSubmit {
+  width: 50%; }
+
+.loginPage {
+  margin-left: 5%; }
+
 /*# sourceMappingURL=overrides.css.map */
