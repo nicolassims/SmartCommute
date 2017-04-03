@@ -1,5 +1,5 @@
 "use strict";
-const DATA_HANDLER = require('./node/Data_Handler');
+const DATA_HANDLER = require('./node/DataHandler.js');
 class app {
     constructor() {
         this.ejsData = null;
