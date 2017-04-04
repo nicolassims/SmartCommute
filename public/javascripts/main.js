@@ -9,7 +9,7 @@
 class main {
     constructor() {
         main.setUp();
-        this.handleContinue();
+        main.handleContinue();
     }
 
     static setUp() {
@@ -17,7 +17,7 @@ class main {
         document.getElementById('leaderboardPage').style.display = "none";
     }
 
-    handleContinue() {
+    static handleContinue() {
         document.getElementById('loginSubmit').addEventListener('click', () => {
             if (document.getElementById('email').value === '' || ! /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(document.getElementById('email').value)) {
                 alert(`You must provide a proper email address and password to continue.`)
