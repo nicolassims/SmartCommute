@@ -22,7 +22,7 @@ class main {
             if (document.getElementById('email').value === '' || ! /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(document.getElementById('email').value)) {
                 alert(`You must provide a proper email address and password to continue.`)
             } else {
-                this.performAjax('XMLHttpRequest0', JSON.stringify([document.getElementById('email').value, document.getElementById('password').value]), (response) => {
+                main.performAjax('XMLHttpRequest0', JSON.stringify([document.getElementById('email').value, document.getElementById('password').value]), (response) => {
                     if (response == 'true') {
                         document.getElementById('loginPage').style.display = "none";
                         document.getElementById('loggerPage').style.display = "block";
@@ -34,8 +34,7 @@ class main {
         });
     }
 
-
-    performAjax(requestNum, sendToNode, callback) {
+    static performAjax(requestNum, sendToNode, callback) {
         console.log('words1');
         let bustCache = '?' + new Date().getTime();
         const XHR = new XMLHttpRequest();
