@@ -46,6 +46,18 @@ class app {
                             response.end('false');
                         }
                     });
+                } else if (request.headers['x-requested-with'] === 'XMLHttpRequest1') {
+                    request.on('data', (data) => {
+                        this.user = DATA_HANDLER.handleUserTrips(data.toString('utf8'));
+                        console.log('words4');
+                        if (this.user == true) {
+                            response.writeHead(200, {'content-type': 'application/json'});
+                            response.end('true');
+                        } else {
+                            response.writeHead(200, {'content-type': 'text/plain'});
+                            response.end('false');
+                        }
+                    });
                 } else {
                     response.writeHead(405, "Method not supported", {'Content-Type': 'text/html'});
                     response.end('<html><head><title>405 - Method not supported</title></head><body><h1>Method not supported.</h1></body></html>');

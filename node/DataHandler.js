@@ -2,10 +2,11 @@
 
 const IO = require('fs');
 
+let userTrips = [];
+
 class DataHandler {
     static handleUserData(data) {
         let isTrue = 0;
-        console.log('words3');
         data = JSON.parse(data);
         data = data.toString().split(/,/);
         let users = [];
@@ -22,6 +23,25 @@ class DataHandler {
         if (isTrue == 1) {
             return true;
         }
+    }
+
+    static handleUserTrips(data) {
+        let tempdata = JSON.parse(data);
+        tempdata = tempdata.toString().split(/,/);
+        console.log('tempdata=' + tempdata);
+        if (userTrips.length == 0) {
+            userTrips[0] = tempdata;
+        } else {
+            for (let i = 0; i < userTrips.length; i++) {
+                if (tempdata[0] != userTrips[i][0]) {
+                    userTrips[userTrips.length] = tempdata;
+                } else {
+                    userTrips[i][2] = userTrips[i][2] - -tempdata[2];
+                    userTrips[i][3] = userTrips[i][3] - -tempdata[3];
+                }
+            }
+        }
+        console.log('userTrips=' + userTrips);
     }
 }
 

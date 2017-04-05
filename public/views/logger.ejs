@@ -1,9 +1,12 @@
-<div id="bigDiv">
-    <div class="leftColumns">Date</div> <input type="text" class="rightColumns" placeholder="ex. 5/6/17">
-    <div class="leftColumns">Trips</div> <input type="text" class="rightColumns" placeholder="ex. 1">
-    <div class="leftColumns">Mileage</div> <input type="text" class="rightColumns" placeholder="ex. 8">
-</div>
-<textarea type="text" id="tripDescrip" placeholder="Option to enter a description of the trip"></textarea>
+<form id="">
+    <div id="bigDiv">
+        <div class="leftColumns">Date</div> <input id="dateInput" type="date" class="rightColumns" placeholder="ex. 5/6/17" required>
+        <div class="leftColumns">Trips</div> <input id="tripInput" type="text" class="rightColumns" placeholder="ex. 1" required>
+        <div class="leftColumns">Mileage</div> <input id="mileInput" type="text" class="rightColumns" placeholder="ex. 8" required>
+    </div>
+    <textarea type="text" id="tripDescrip" placeholder="Option to enter a description of the trip"></textarea>
+    <button id="loggerSubmit" type="button">Submit</button>
+</form>
 <br>
 <button id="leaderboardButton" class="switchbutton">Leaderboard</button>
 

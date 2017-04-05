@@ -11,6 +11,7 @@ class main {
         main.setUp();
         main.handleContinue();
         main.handlePageswitch();
+        main.setupLeaderboard();
     }
 
     static setUp() {
@@ -31,6 +32,16 @@ class main {
                         alert('You must provide a proper email address and password to continue.');
                     }
                 });
+            }
+        });
+    }
+
+    static setupLeaderboard() {
+        document.getElementById('loggerSubmit').addEventListener('click', () => {
+            if (document.getElementById('dateInput').value === '' || document.getElementById('tripInput').value === '' || document.getElementById('mileInput').value === '') {
+                alert(`Please fully fill out the three required fields.`)
+            } else {
+                main.performAjax('XMLHttpRequest1', JSON.stringify([document.getElementById('email').value, document.getElementById('dateInput').value, document.getElementById('tripInput').value, document.getElementById('mileInput').value]), false);
             }
         });
     }
