@@ -10,6 +10,9 @@
   #header #emmet {
     margin: 2% 0 0 11%; }
 
+#pushdown {
+  margin-bottom: 5%; }
+
 .logo {
   height: 15%;
   width: 15%;
@@ -100,5 +103,9 @@
 
 .loginPage {
   margin-left: 5%; }
+
+#loggerButton, #leaderboardButton {
+  position: absolute;
+  left: 45%; }
 
 /*# sourceMappingURL=overrides.css.map */
