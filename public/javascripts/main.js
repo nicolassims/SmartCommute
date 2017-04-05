@@ -10,6 +10,7 @@ class main {
     constructor() {
         main.setUp();
         main.handleContinue();
+        main.handlePageswitch();
     }
 
     static setUp() {
@@ -31,6 +32,17 @@ class main {
                     }
                 });
             }
+        });
+    }
+
+    static handlePageswitch() {
+        document.getElementById('leaderboardButton').addEventListener('click', () => {
+            document.getElementById('loggerPage').style.display = "none";
+            document.getElementById('leaderboardPage').style.display = "block";
+        });
+        document.getElementById('loggerButton').addEventListener('click', () => {
+            document.getElementById('leaderboardPage').style.display = "none";
+            document.getElementById('loggerPage').style.display = "block";
         });
     }
 
