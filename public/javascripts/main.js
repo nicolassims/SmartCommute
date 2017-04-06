@@ -58,7 +58,6 @@ class main {
     }
 
     static performAjax(requestNum, sendToNode, callback) {
-        console.log('words1');
         let bustCache = '?' + new Date().getTime();
         const XHR = new XMLHttpRequest();
         XHR.open('POST', document.url + bustCache, true);

@@ -34,10 +34,8 @@ class app {
             };
             if (request.method === 'POST') {
                 if (request.headers['x-requested-with'] === 'XMLHttpRequest0') {
-                    console.log('words2');
                     request.on('data', (data) => {
                         this.user = DATA_HANDLER.handleUserData(data.toString('utf8'));
-                        console.log('words4');
                         if (this.user == true) {
                             response.writeHead(200, {'content-type': 'application/json'});
                             response.end('true');
@@ -49,7 +47,6 @@ class app {
                 } else if (request.headers['x-requested-with'] === 'XMLHttpRequest1') {
                     request.on('data', (data) => {
                         this.user = DATA_HANDLER.handleUserTrips(data.toString('utf8'));
-                        console.log('words4');
                         if (this.user == true) {
                             response.writeHead(200, {'content-type': 'application/json'});
                             response.end('true');

@@ -26,18 +26,18 @@ class DataHandler {
     }
 
     static handleUserTrips(data) {
-        let tempdata = JSON.parse(data);
-        tempdata = tempdata.toString().split(/,/);
+        let tempdata = JSON.parse(data).toString().split(/,/);
         console.log('tempdata=' + tempdata);
         if (userTrips.length == 0) {
             userTrips[0] = tempdata;
         } else {
             for (let i = 0; i < userTrips.length; i++) {
-                if (tempdata[0] != userTrips[i][0]) {
-                    userTrips[userTrips.length] = tempdata;
-                } else {
+                if (tempdata[0] == userTrips[i][0]) {
                     userTrips[i][2] = userTrips[i][2] - -tempdata[2];
                     userTrips[i][3] = userTrips[i][3] - -tempdata[3];
+                }
+                if (i == userTrips.length) {
+                    userTrips[userTrips.length + 1] = tempdata;
                 }
             }
         }
