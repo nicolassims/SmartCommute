@@ -47,13 +47,10 @@ class app {
                 } else if (request.headers['x-requested-with'] === 'XMLHttpRequest1') {
                     request.on('data', (data) => {
                         this.user = DATA_HANDLER.handleUserTrips(data.toString('utf8'));
-                        if (this.user == true) {
-                            response.writeHead(200, {'content-type': 'application/json'});
-                            response.end('true');
-                        } else {
-                            response.writeHead(200, {'content-type': 'text/plain'});
-                            response.end('false');
-                        }
+                        console.log(this.user);
+                        //Delete this console.log
+                        response.writeHead(200, {'content-type': 'application/json'});
+                        response.end('true');
                     });
                 } else {
                     response.writeHead(405, "Method not supported", {'Content-Type': 'text/html'});

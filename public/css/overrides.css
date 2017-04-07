@@ -108,4 +108,9 @@
   position: absolute;
   left: 45%; }
 
+#loggerSubmit {
+  position: absolute;
+  left: 47%;
+  margin-top: 2%; }
+
 /*# sourceMappingURL=overrides.css.map */

@@ -42,6 +42,7 @@ class DataHandler {
                 userTrips[userTrips.length] = tempdata;
             }
         }
+        return userTrips;
     }
 }
 

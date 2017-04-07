@@ -39,9 +39,11 @@ class main {
     static setupLeaderboard() {
         document.getElementById('loggerSubmit').addEventListener('click', () => {
             if (document.getElementById('dateInput').value === '' || document.getElementById('tripInput').value === '' || document.getElementById('mileInput').value === '') {
-                alert(`Please fully fill out the three required fields.`)
+                alert(`Please fully fill out the three required fields.`);
             } else {
-                main.performAjax('XMLHttpRequest1', JSON.stringify([document.getElementById('email').value, document.getElementById('dateInput').value, document.getElementById('tripInput').value, document.getElementById('mileInput').value]), false);
+                main.performAjax('XMLHttpRequest1', JSON.stringify([document.getElementById('email').value, document.getElementById('dateInput').value, document.getElementById('tripInput').value, document.getElementById('mileInput').value]), (response) => {
+                    //Figure out what to put here.
+                });
             }
         });
     }
