@@ -26,8 +26,8 @@ class DataHandler {
     }
 
     static handleUserTrips(data) {
+        let alreadyPresent = false;
         let tempdata = JSON.parse(data).toString().split(/,/);
-        console.log('tempdata=' + tempdata);
         if (userTrips.length == 0) {
             userTrips[0] = tempdata;
         } else {
@@ -35,13 +35,13 @@ class DataHandler {
                 if (tempdata[0] == userTrips[i][0]) {
                     userTrips[i][2] = userTrips[i][2] - -tempdata[2];
                     userTrips[i][3] = userTrips[i][3] - -tempdata[3];
-                }
-                if (i == userTrips.length) {
-                    userTrips[userTrips.length + 1] = tempdata;
+                    alreadyPresent = true;
                 }
             }
+            if (alreadyPresent != true) {
+                userTrips[userTrips.length] = tempdata;
+            }
         }
-        console.log('userTrips=' + userTrips);
     }
 }
 
