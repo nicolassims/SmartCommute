@@ -6,6 +6,8 @@
 
 'use strict';
 
+let leaderboard = [];
+
 class main {
     constructor() {
         main.setUp();
@@ -42,7 +44,7 @@ class main {
                 alert(`Please fully fill out the three required fields.`);
             } else {
                 main.performAjax('XMLHttpRequest1', JSON.stringify([document.getElementById('email').value, document.getElementById('dateInput').value, document.getElementById('tripInput').value, document.getElementById('mileInput').value]), (response) => {
-                    //Figure out what to put here.
+                    leaderboard = JSON.parse(response);
                 });
             }
         });
@@ -52,6 +54,21 @@ class main {
         document.getElementById('leaderboardButton').addEventListener('click', () => {
             document.getElementById('leaderboardPage').style.display = "block";
             document.getElementById('loggerPage').style.display = "none";
+            for (let i = 0; i < leaderboard.length; i++) {
+                if (leaderboard[i] != null) {
+                    document.getElementById('username'+i).innerHTML = leaderboard[i][0];
+                    document.getElementById('trips'+i).innerHTML = leaderboard[i][2];
+                    document.getElementById('mileage'+i).innerHTML = leaderboard[i][3];
+                }
+            }
+            let totalTrips = 0;
+            let totalMileage = 0;
+            for (let i = 0; i < leaderboard.length; i++) {
+                totalTrips = totalTrips - -leaderboard[i][2];
+                totalMileage = totalMileage - -leaderboard[i][3];
+            }
+            document.getElementById('totalTrips').innerHTML = JSON.stringify(totalTrips);
+            document.getElementById('totalMileage').innerHTML = JSON.stringify(totalMileage);
         });
         document.getElementById('loggerButton').addEventListener('click', () => {
             document.getElementById('loggerPage').style.display = "block";

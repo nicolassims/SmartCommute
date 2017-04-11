@@ -42,8 +42,19 @@ class DataHandler {
                 userTrips[userTrips.length] = tempdata;
             }
         }
+        for (let i = 0; i < userTrips.length; i++) {
+            if (i != 0) {
+                if (userTrips[i][3] - -userTrips[i][2] > userTrips[i - 1][3] - -userTrips[i - 1][2]) {
+                    let holder = userTrips[i - 1];
+                    userTrips[i - 1] = userTrips[i];
+                    userTrips[i] = holder;
+                    i = 0;
+                }
+            }
+        }
         return userTrips;
     }
 }
 
 module.exports = DataHandler;
+
