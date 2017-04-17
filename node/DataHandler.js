@@ -57,4 +57,3 @@ class DataHandler {
 }
 
 module.exports = DataHandler;
-
