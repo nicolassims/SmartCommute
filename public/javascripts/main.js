@@ -19,6 +19,7 @@ class main {
     static setUp() {
         document.getElementById('loggerPage').style.display = "none";
         document.getElementById('leaderboardPage').style.display = "none";
+        document.getElementById('signupPage').style.display = "none";
     }
 
     static handleContinue() {
