@@ -1,6 +1,6 @@
 "use strict";
 
-const DATA_HANDLER = require('./node/DataHandler.js'), IO = require(`fs`);
+const DATA_HANDLER = require('./node/DataHandler.js');
 
 class app {
     constructor() {
@@ -47,6 +47,12 @@ class app {
                 } else if (request.headers['x-requested-with'] === 'XMLHttpRequest1') {
                     request.on('data', (data) => {
                         this.user = DATA_HANDLER.handleUserTrips(data.toString('utf8'));
+                        response.writeHead(200, {'content-type': 'application/json'});
+                        response.end(JSON.stringify(this.user));
+                    });
+                } else if (request.headers['x-requested-with'] === 'XMLHttpRequest2') {
+                    request.on('data', (data) => {
+                        this.user = DATA_HANDLER.handleUserSignup(data.toString('utf8'));
                         response.writeHead(200, {'content-type': 'application/json'});
                         response.end(JSON.stringify(this.user));
                     });

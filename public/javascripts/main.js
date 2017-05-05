@@ -11,6 +11,7 @@ let leaderboard = [];
 class main {
     constructor() {
         main.setUp();
+        main.handleSignup();
         main.handleContinue();
         main.handlePageswitch();
         main.setupLeaderboard();
@@ -20,6 +21,20 @@ class main {
         document.getElementById('loggerPage').style.display = "none";
         document.getElementById('leaderboardPage').style.display = "none";
         document.getElementById('signupPage').style.display = "none";
+    }
+
+    static handleSignup() {
+        document.getElementById('signupSubmit').addEventListener('click', () => {
+            if (document.getElementById('signupEmail').value === '' || document.getElementById('signupPassword').value != document.getElementById('confirmPassword').value || ! /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(document.getElementById('signupEmail').value)) {
+                alert(`You must provide a proper email address and password to continue.`)
+            } else {
+                main.performAjax('XMLHttpRequest2', JSON.stringify([document.getElementById('signupEmail').value, document.getElementById('signupPassword').value, document.getElementById('firstName').value, document.getElementById('lastName').value]), (response) => {
+                    if (response == '1') {
+                        alert('There\'s already a user with that email address.')
+                    }
+                });
+            }
+        });
     }
 
     static handleContinue() {
@@ -74,6 +89,10 @@ class main {
         document.getElementById('loggerButton').addEventListener('click', () => {
             document.getElementById('loggerPage').style.display = "block";
             document.getElementById('leaderboardPage').style.display = "none";
+        });
+        document.getElementById('switchToSignup').addEventListener('click', () => {
+            document.getElementById('signupPage').style.display = "block";
+            document.getElementById('loginPage').style.display = "none";
         });
     }
 

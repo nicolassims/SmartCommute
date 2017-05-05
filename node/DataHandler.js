@@ -1,10 +1,28 @@
 "use strict";
 
-const IO = require('fs');
+const IO = require(`fs`);
+const DATASTORE = require('nedb');
+const DB = new DATASTORE({ filename: 'data/log_db.json', autoload: true });
 
 let userTrips = [];
 
 class DataHandler {
+    static handleUserSignup(data) {
+        data = JSON.parse(data);
+        data = data.toString().split(/,/);
+        let users = [];
+        let fileReader = IO.readFileSync(`data/users.csv`, `utf8`);
+        let tempArray = fileReader.toString().split(/\r?\n/);
+        for (let i = 0; i < tempArray.length; i++) {
+            users.push(tempArray[i].toString().split(/,/));
+        }
+        for (let i = 0; i < users.length; i++) {
+            if (data[0] == users[i][0]) {
+                return 1;
+            }
+        }
+    }
+
     static handleUserData(data) {
         let isTrue = 0;
         data = JSON.parse(data);
