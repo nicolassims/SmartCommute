@@ -53,6 +53,7 @@ class app {
                 } else if (request.headers['x-requested-with'] === 'XMLHttpRequest2') {
                     request.on('data', (data) => {
                         this.user = DATA_HANDLER.handleUserSignup(data.toString('utf8'));
+                        console.log(this.user);
                         response.writeHead(200, {'content-type': 'application/json'});
                         response.end(JSON.stringify(this.user));
                     });

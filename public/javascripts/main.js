@@ -29,8 +29,15 @@ class main {
                 alert(`You must provide a proper email address and password to continue.`)
             } else {
                 main.performAjax('XMLHttpRequest2', JSON.stringify([document.getElementById('signupEmail').value, document.getElementById('signupPassword').value, document.getElementById('firstName').value, document.getElementById('lastName').value]), (response) => {
+                    response = JSON.parse(response);
                     if (response == '1') {
                         alert('There\'s already a user with that email address.')
+                    } else {
+                        alert('Welcome to the app!');
+                        document.getElementById('loginPage').style.display = "none";
+                        document.getElementById('loggerPage').style.display = "block";
+                        document.getElementById('email').value = document.getElementById('signupEmail').value;
+                        document.getElementById('password').value = document.getElementById('signupPassword').value;
                     }
                 });
             }

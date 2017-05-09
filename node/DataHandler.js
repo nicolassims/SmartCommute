@@ -5,34 +5,25 @@ const DATASTORE = require('nedb');
 const DB = new DATASTORE({ filename: 'data/log_db.json', autoload: true });
 
 let userTrips = [];
+let users = [];
 
 class DataHandler {
     static handleUserSignup(data) {
         data = JSON.parse(data);
         data = data.toString().split(/,/);
-        let users = [];
-        let fileReader = IO.readFileSync(`data/users.csv`, `utf8`);
-        let tempArray = fileReader.toString().split(/\r?\n/);
-        for (let i = 0; i < tempArray.length; i++) {
-            users.push(tempArray[i].toString().split(/,/));
-        }
         for (let i = 0; i < users.length; i++) {
             if (data[0] == users[i][0]) {
                 return 1;
             }
         }
+        users.push(data);
+        return users;
     }
 
     static handleUserData(data) {
         let isTrue = 0;
         data = JSON.parse(data);
         data = data.toString().split(/,/);
-        let users = [];
-        let fileReader = IO.readFileSync(`data/users.csv`, `utf8`);
-        let tempArray = fileReader.toString().split(/\r?\n/);
-        for (let i = 0; i < tempArray.length; i++) {
-            users.push(tempArray[i].toString().split(/,/));
-        }
         for (let i = 0; i < users.length; i++) {
             if (users[i][0] == data[0] && users[i][1] == data[1]) {
                 isTrue = 1;
